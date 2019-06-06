@@ -1,10 +1,26 @@
-// import logo from "./logo.svg";
 import React, { Component } from "react";
 import "./App.css";
+import SwithButton from "./SwithButton";
 
 class App extends Component {
+  state = {
+    time: 0,
+    active: false
+  };
+
+  handleClick = () => {
+    this.setState({
+      active: !this.state.active
+    });
+  };
+
   render() {
-    return <div className='app'>Aplikacja</div>;
+    return (
+      <>
+        <p>{this.state.time}</p>
+        <SwithButton />
+      </>
+    );
   }
 }
 
